@@ -1,0 +1,24 @@
+// colors
+
+$color-1: #5b927d; // Patina
+$color-2: #a8ae7e; // Swamp Green
+$color-3: #e7d5a4; // Zombie
+$color-4: #835531; // Potters Clay
+$color-5: #262423; // Dune
+$color-6: #ffffff; // White
+
+$bodyborder-color: #ffd9e8;
+
+// fonts 
+
+@include font-face("Calendas Plus", "/fonts/calendas_plus_webfont", normal, normal);
+@include font-face("Calendas Plus", "/fonts/calendas_plus_bold", bold, normal);
+@include font-face("Calendas Plus", "/fonts/calendas_plus_italic", normal, italic);
+@include font-face("Vincent", "/fonts/Vincent-Regular", normal);
+
+$primary-font: 'Calendas Plus', sans-serif;
+$secondary-font: 'Calendas Plus', serif;
+
+// Number of projects 
+
+$items: 5;

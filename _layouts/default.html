@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+	<link rel="manifest" href="/img/site.webmanifest">
+	<link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bd5bf">
+	<link rel="shortcut icon" href="/img/favicon.ico">
+	<meta name="msapplication-TileColor" content="#00aba9">
+	<meta name="msapplication-config" content="/img/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700|Merriweather:400italic,400' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="../css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="../css/style.css"> <!-- Resource style -->
+	<script src="../js/modernizr.js"></script> <!-- Modernizr -->
+
+	<style>
+		.cd-projects-previews {
+			background-position: calc( ({{ paginator.posts | size }} + 1) * 20%) 65%;
+	
+		}
+		@media screen and (max-width: 768px) {
+			.cd-projects-previews {
+		    	background-position: 50% calc( ({{ paginator.posts | size }} + 1) * 19%);
+			}
+		}
+
+	</style>
+	<title>{{ site.title }} | {{ page.title }}</title>
+	{% seo %}
+	{% gtm head %}
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+	<script>
+			if (window.netlifyIdentity) {
+			  window.netlifyIdentity.on("init", user => {
+				if (!user) {
+				  window.netlifyIdentity.on("login", () => {
+					document.location.href = "/admin/";
+				  });
+				}
+			  });
+			}
+	</script>	
+</head>
+<body>
+	<div id="content"> 
+	<a class="cd-nav-trigger cd-text-replace" href="#primary-nav">Menu<span aria-hidden="true" class="cd-icon"></span></a>
+	<div class="cd-projects-container">
+
+		<ul class="cd-projects-previews">
+			{% for post in paginator.posts %}
+			    <li class="{{ post.custom-class }}">
+					<a id="{{ post.custom-class }}" href="{{ site.baseurl }}{{ post.url }}" style="background: url('{{ post.image }}') no-repeat center center;">
+						<div class="cd-project-title">
+							<h2 data-text="{{ post.title }}">{{ post.title }}</h2>
+							<p><span class="jamboree">{{ post.description }}</span>{% if post.description1 %}<span class="jamboree">{{ post.description1 }}</span>{% endif %}{% if post.description2 %}<span class="jamboree">{{ post.description2 }}</span>{% endif %}</p>
+						</div>
+						
+						<div class="hover-cover"></div>
+					</a>
+					<span class="postDate">{{ post.date | date: "%b %-d, %Y" }}</span>
+				</li>
+			{% endfor %}
+		</ul> <!-- .cd-projects-previews -->
+
+		<ul class="cd-projects">
+			{% for post in paginator.posts %}
+			<li class="{{ post.custom-class }}">
+				<div class="preview-image" style="background: url('{{ post.image }}') no-repeat center center;">
+					<div class="cd-project-title">
+						<h2>{{ post.title }}</h2>
+						<p>{{ post.description}} <span class="postDate">{{ post.date | date: "%b %-d, %Y" }}</span></p>
+					</div>
+					{% if post.swag %}
+					<span><h3>{{ post.swag }} </h3></span>
+					{% endif %}
+				</div>
+
+				<div class="cd-project-info">
+					<p>
+						nothing to see here yet...
+					</p>
+				</div> <!-- .cd-project-info -->
+			</li>
+			{% endfor %}
+		</ul> <!-- .cd-projects -->
+
+		<button class="scroll cd-text-replace">Scroll</button>
+	</div> <!-- .cd-project-container -->
+
+	<nav class="cd-primary-nav" id="primary-nav">
+		<!-- <div class="cd-description">
+			<h2>Brand New Guys<br /><span><i>creative</i>agency</span></h2>
+			<p>{{ site.description }}</p>
+		</div> -->
+
+		<ul>
+			<li class="cd-label">Get in touch</li>
+			<li><a target="_blank" href="mailto:hi@brandnewguys.co">hi@brandnewguys.co</a></li>
+			<li><a target="_blank" href="tel:+31102233883">010 223 3883</a></li>
+			
+			<li><a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin&destination=Claes+de+Vrieselaan+2B,+3021+JN+Rotterdam">Claes de Vrieselaan 2B</a></li>
+		</ul>
+	</nav> <!-- .cd-primary-nav -->
+
+	<nav class="pagination">
+		{% if paginator.total_pages > 1 %}
+		<ul>
+		  {% if paginator.previous_page %}
+		  <li class="previous">
+		    <a href="{{ paginator.previous_page_path | absolute_url }}">{% include navigation-arrow.svg %}</a>
+		  </li>
+		  {% endif %}
+		  {% if paginator.next_page %}
+		  <li class="next">
+		    <a href="{{ paginator.next_page_path | absolute_url }}">{% include navigation-arrow.svg %}</a>
+		  </li>
+		  {% endif %}
+		</ul>
+		{% endif %}
+	</nav>
+
+	<!-- <input class="curtain_button" type="checkbox" id="curtain"/> -->
+	<!-- <span class="clipper"><label class="curtain_button" for="curtain">⇪</label></span> -->
+	<!-- <div class="splash {% if page.pagination_info.curr_page > 1 %}hidden{% endif %}"> -->
+		<!-- <div class="glitch" data-text="BRAND NEW GUYS">BRAND NEW GUYS</div>  -->
+		<!-- <h2>Brand New Guys<br /><span><i>creative</i>agency</span></h2> -->
+	<!-- </div> -->
+
+
+<script src="../js/jquery-2.1.1.js"></script>
+<script src="../js/main.js"></script> <!-- Resource jQuery -->
+</div>
+
+{% gtm body %}
+</body>
+</html>

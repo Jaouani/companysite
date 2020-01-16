@@ -1,0 +1,52 @@
+---
+layout: default-allgood
+permalink: '/episode/'
+---
+<section class="site">
+        <div id="site__bg"></div>
+        <div class="left">
+          <label for="" class="site__label">Episode #(Numbers coming soon)</label>
+          <h1 class="site__title site__title--separator">{{ page.title}}</h1>
+        </div>
+        <div class="right">{{ for img in site.allgood}}
+          <img src="{{ page.img}}" alt="" class="episode__image">{{ endfor}}
+          <!--<div class="audio-player site__playbar">
+            <div class="loading">
+              <div class="spinner"></div>
+            </div>
+            <button class="play-pause-btn play"></button>
+            <div class="controls">
+              <span class="current-time">0:00</span>
+              <div class="slider" data-direction="horizontal">
+                <div class="progress">
+                  <div class="pin" id="progress-pin" data-method="rewind"></div>
+                </div>
+              </div>
+              <span class="total-time">0:00</span>
+            </div>
+
+            <audio preload="true">
+              <source src="{{ page.audio }}" type="audio/mpeg">
+            </audio>
+          </div>--><style>
+            .sc-media-left{
+              display: none;
+            }
+          </style>
+          <iframe class="audio-player site__playbar" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/564144336&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;show_teaser=false&amp;visual=false"></iframe>
+          
+          <h4 class="site__secondary_title">{{site.header}}</h4>
+          <p class="site__description">{{ content | strip_html }}</p>
+          <div class="site__navigation">
+            <!-- toggle on the previous as needed -->
+            <a href="#" class="site__navigation_items site__navigation_items--left hidden">
+              <label for="">Previous Episode</label>
+              <h4>Dylan Perry</h4>
+            </a>
+            <a href="#" class="site__navigation_items site__navigation_items--right">
+              <label for="">Next Episode</label>
+              <h4>Dylan Perry</h4>
+            </a>
+          </div>
+        </div>
+      </section>

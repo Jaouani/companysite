@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700|Merriweather:400italic,400' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="/css/style.css"> <!-- Resource style -->
+	<script src="/js/modernizr.js"></script> <!-- Modernizr -->
+	{% seo %}
+</head>
+<body>
+	<div id="content">
+	<a class="cd-nav-trigger cd-text-replace project-open single-post" href="{{ site.url }}">Menu<span aria-hidden="true" class="cd-icon"></span></a>
+
+	<div class="cd-projects-container project-open" style="height: 100vh">
+		<ul class="cd-projects">
+			<li class="selected content-visible">
+				<div class="preview-image" style="background: url('{{ page.image }}') no-repeat center center;">
+					<div class="cd-project-title">
+						<h2>{{ page.title }}</h2>
+						<p>{{ page.description}} | <span class="postDate">{{ post.date | date: "%b %-d, %Y" }}</span></p>
+					</div>
+					{% if post.swag %}
+					<span><h3>{{ post.swag }} </h3></span>
+					{% endif %}
+				</div>
+
+				<div id="content">
+                    <div class="splash-bng">
+                            <div class="splash-bng-item">
+                                {{ page.bng-text }}
+                                <a href="#">{{ page.bng-project }}</a>
+							</div>
+                            
+                    </div>
+                    <span class="bng"><h3>{{ page.bng-title }}</h3></span>
+					
+				</div> <!-- .cd-project-info -->
+			</li>
+		</ul> <!-- .cd-projects -->
+
+		<button class="scroll cd-text-replace">Scroll</button>
+	</div> <!-- .cd-project-container -->
+
+<script src="/js/jquery-2.1.1.js"></script>
+<script src="/js/main.js"></script> <!-- Resource jQuery -->
+</div>
+</body>
+</html>

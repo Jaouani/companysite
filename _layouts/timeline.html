@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="{{ "/css/reset.css" | absolute_url }}"> <!-- CSS reset -->
+    <link rel="stylesheet" href="{{ "/css/process.css" | absolute_url }}"> <!-- Resource style -->
+    <script src="{{ "/js/modernizr.js" | absolute_url }}"></script> <!-- Resource jQuery -->
+
+    <title>Responsive Vertical Timeline</title>
+</head>
+<body style="background-color:black;">
+    <img class="brand-logo" style="display:block; margin:0 auto;"src="{{"/img/bng-monogram-subtitle.jpg" | absolute_url }}">
+
+
+<section id="cd-timeline" class="cd-container">
+    {{content}}
+
+</section> <!-- cd-timeline -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="{{ "/js/process.js" | absolute_url }}"></script> <!-- Resource jQuery -->
+</body>
+</html>

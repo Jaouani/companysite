@@ -1,0 +1,28 @@
+<div class="cd-nav-footer">
+  <div class="row">
+      <h3>
+        {% if page.cta %}
+          {{ page.cta }}
+        {% else %}
+          Get in touch:
+        {% endif %}
+      </h3>
+      
+    <table class="footer-info">
+  <tr class="footer-row">
+    <td class="brand">{{ site.title }}</td></td>
+  </tr>  
+</table>
+<table class="footer-info">
+  <tr class="footer-row">
+      <td><a href="{{ site.maps }}" target="_blank">{{ site.address }}</a></td>
+      <td><a href="to:{{ site.phone }}">{{ site.phone }}</a></td>
+  </tr>
+</table>
+<table class="footer-info">
+  <tr class="footer-row">
+    <td><a href="mailto:{{ site.email }}" target="_blank">{{ site.email }}</td>
+    <td><a href="{{ site.instagram }}" target="_blank">{% include instagram-icon.svg %}brandnewguys.agency</a></td>
+  </tr>
+</table>
+</div>

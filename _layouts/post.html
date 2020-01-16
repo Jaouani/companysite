@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700|Merriweather:400italic,400' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="/css/style.css"> <!-- Resource style -->
+	<script src="/js/modernizr.js"></script> <!-- Modernizr -->
+	{% seo %}
+</head>
+<body>
+	<div id="content">
+	<a class="cd-nav-trigger cd-text-replace project-open single-post" href="{{ site.url }}">Menu<span aria-hidden="true" class="cd-icon"></span></a>
+
+	<div class="cd-projects-container project-open" style="height: 100vh">
+		<ul class="cd-projects">
+			<li class="selected content-visible">
+				<div class="preview-image" style="background: url('{{ page.image }}') no-repeat center center;">
+					<div class="cd-project-title">
+						<h2>{{ page.title }}</h2>
+						<p>{{ page.description}} | <span class="postDate">{{ post.date | date: "%b %-d, %Y" }}</span></p>
+					</div>
+					{% if post.swag %}
+					<span><h3>{{ post.swag }} </h3></span>
+					{% endif %}
+				</div>
+
+				<div class="cd-project-info" id="content">
+
+						<span class='mask'><h2 class="project-name">{{ page.title }}</h2></span>
+						<dl>
+							<dt>Client</dt>
+							<dd>{{ page.client }}</dd>
+							<dt>Project</dt>
+							<dd>{{ page.project }}</dd>
+							<dt>Work</dt>
+							<dd>{{ page.work }}</dd>
+							<dt>Team</dt>
+							<dd>{{ page.team }}</dd>
+						</dl>
+
+						{{ content }}
+
+						{% include footer.html %}
+
+				</div> <!-- .cd-project-info -->
+			</li>
+		</ul> <!-- .cd-projects -->
+
+		<button class="scroll cd-text-replace">Scroll</button>
+	</div> <!-- .cd-project-container -->
+
+ <!-- I wonder if this works -->
+	<nav class="cd-primary-nav" id="primary-nav">
+		<ul>
+			<li class="cd-label">Navigation</li>
+			<li><a href="#0">The team</a></li>
+			<li><a href="#0">Our services</a></li>
+			<li><a href="#0">Our projects</a></li>
+			<!-- <li><a href="#0">Contact us</a></li> -->
+		</ul>
+	</nav> <!-- .cd-primary-nav -->
+
+
+<script src="/js/jquery-2.1.1.js"></script>
+<script src="/js/main.js"></script> <!-- Resource jQuery -->
+</div>
+</body>
+</html>

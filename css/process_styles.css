@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "Calendas Plus";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/calendas_plus_webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/calendas_plus_webfont.woff2") format("woff2"), url("/fonts/calendas_plus_webfont.woff") format("woff"), url("/fonts/calendas_plus_webfont.ttf") format("truetype"), url("/fonts/calendas_plus_webfont.svg#Calendas Plus") format("svg"); }
+@font-face {
+  font-family: "Calendas Plus";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/fonts/calendas_plus_bold.eot?#iefix") format("embedded-opentype"), url("/fonts/calendas_plus_bold.woff2") format("woff2"), url("/fonts/calendas_plus_bold.woff") format("woff"), url("/fonts/calendas_plus_bold.ttf") format("truetype"), url("/fonts/calendas_plus_bold.svg#Calendas Plus") format("svg"); }
+@font-face {
+  font-family: "Calendas Plus";
+  font-style: italic;
+  font-weight: normal;
+  src: url("/fonts/calendas_plus_italic.eot?#iefix") format("embedded-opentype"), url("/fonts/calendas_plus_italic.woff2") format("woff2"), url("/fonts/calendas_plus_italic.woff") format("woff"), url("/fonts/calendas_plus_italic.ttf") format("truetype"), url("/fonts/calendas_plus_italic.svg#Calendas Plus") format("svg"); }
+@font-face {
+  font-family: "Vincent";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/Vincent-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/Vincent-Regular.woff2") format("woff2"), url("/fonts/Vincent-Regular.woff") format("woff"), url("/fonts/Vincent-Regular.ttf") format("truetype"), url("/fonts/Vincent-Regular.svg#Vincent") format("svg"); }
+body {
+  padding: 1em; }
+
+input.search {
+  margin-left: 5px;
+  padding: 1rem;
+  width: 50%;
+  font-family: 'Calendas Plus';
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #696969;
+  border-radius: 5px;
+  border-style: solid;
+  border: 1px solid #f0f0f0; }
+
+.list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0; }
+  .list li {
+    flex: 1 0 25%;
+    box-sizing: border-box;
+    background: #e0ddd5;
+    color: #171e42;
+    padding: 10px;
+    margin: 5px;
+    text-align: center; }
+    .list li a {
+      text-decoration: none;
+      color: white; }
+
+/*# sourceMappingURL=process_styles.css.map */

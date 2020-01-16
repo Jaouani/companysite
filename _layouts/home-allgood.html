@@ -1,0 +1,64 @@
+---
+layout: default-allgood
+permalink: '/allgood/'
+pagination:
+  enabled: true
+  collection: allgood
+  sort_reverse: true
+  per_page: 3
+  
+---
+<section class="site">
+          <h1 class="site__title site__title--separator">Dropcast</h1>
+          <p class="site__description">{{ content | strip_html }}</p>
+        </section>
+        <section class="episodes">
+          {% for post in site.allgood %}
+          <article class="episode">
+            <h2 class="episode__number">0{{ forloop.index}}</h2>
+            <div class="episode__media">
+              <a href="{{ post.url }}" class="episode__image" style="background-image: url({{ post.img }});"></a>
+            </div>
+            <div class="episode__detail">
+              <a href="{{ post.url }}" class="episode__title"><h4>{{ post.title }}</h4></a>
+              <p class="episode__description">{{ post.description }}</p>
+            </div>
+          </article>
+          {% endfor %}
+        </section>
+      </div>
+      <footer>
+            <p class="footer__content">All Good is meant to lift spirits <a href="https://brandnewguys.co">Brand New Guys</a> exclusively for Brand New Guys</p>
+            <!--<div class="logo footer__logo"><a href="https://brandnewguys.co" alt="logo"></a></div>-->
+        <div class="site__navigation btn-main">
+            {% if paginator.total_pages > 1 %}
+              {% if paginator.previous_page %}
+                <a href="{{ paginator.previous_page_path | absolute_url }}" class="site__navigation_items site__navigation_items--left btn-privious">
+                  <label for="">Previous</label>
+                </a>
+              {% endif %}
+              {% if paginator.next_page %}
+              <a href="{{ paginator.next_page_path | absolute_url }}" class="site__navigation_items site__navigation_items--right btn-next">
+                <h4>Next</h4>
+              </a>
+              {% endif %}
+            {% endif %}
+          </div>
+      </footer>
+      <style>
+
+        .site__navigation .site__navigation_items--right {
+          padding-left: 1rem;
+        }
+        /*
+        footer{
+          margin-bottom: -1rem;
+          top: 80vh;
+          height: 20vh;
+          position: fixed;
+          width: 100vw;
+        }
+        main{
+          height: 120vh;
+        }*/
+      </style>
